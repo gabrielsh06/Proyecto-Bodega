@@ -21,9 +21,14 @@ public class ContenedorFrame extends JFrame {
 
     private void inicializarComponentes() {
         cardLayout = new CardLayout();
-        contenedor = new JPanel();
+        contenedor = new JPanel(cardLayout);
+
+        LoginPanel loginPanel = new LoginPanel(this);
+
+        contenedor.add(loginPanel, "LOGIN");
 
         add(contenedor);
+        cardLayout.show(contenedor, "LOGIN");
     }
 
     public void mostrarPantalla(String nombrePantalla) {
