@@ -55,6 +55,7 @@ public class LoginPanel extends JPanel{
         btn.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
         btn.setBackground(new Color(49, 100, 147));
         btn.setForeground(Color.WHITE);
+        btn.setFont(new Font("Segoe UI", Font.BOLD, 13));
         btn.setFocusable(false);
     }
 
@@ -93,7 +94,6 @@ public class LoginPanel extends JPanel{
         formInterno.add(contraseñaField, gbc);
         contraseñaField.setColumns(15);
 
-
         gbc.gridy = 3;
         gbc.gridx = 0;
         gbc.gridwidth = 2;
@@ -108,6 +108,9 @@ public class LoginPanel extends JPanel{
     }
 
     private void configurarComponentes() {
-
+        iniciarSesionButton.addActionListener(e -> {
+            contenedorFrame.mostrarPantalla("MENU");
+        });
+        salirButton.addActionListener(e -> System.exit(0));
     }
 }

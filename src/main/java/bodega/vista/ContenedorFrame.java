@@ -15,7 +15,7 @@ public class ContenedorFrame extends JFrame {
     private void configurarFrame() {
         setTitle("SISTEMA DE GESTIÓN DE VENTAS E INVENTARIO");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000, 800);
+        setSize(1100, 800);
         setLocationRelativeTo(null);
     }
 
@@ -24,8 +24,10 @@ public class ContenedorFrame extends JFrame {
         contenedor = new JPanel(cardLayout);
 
         LoginPanel loginPanel = new LoginPanel(this);
+        MenuPanel menuPanel = new MenuPanel(this);
 
         contenedor.add(loginPanel, "LOGIN");
+        contenedor.add(menuPanel, "MENU");
 
         add(contenedor);
         cardLayout.show(contenedor, "LOGIN");
