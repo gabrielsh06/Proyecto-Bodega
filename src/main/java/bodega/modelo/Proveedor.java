@@ -1,22 +1,27 @@
 package bodega.modelo;
 
+import java.lang.foreign.SymbolLookup;
+
 public class Proveedor {
     private int idProveedor;
     private String nombre;
     private String telefono;
     private String direccion;
+    private boolean activo;
 
-    public Proveedor(String nombre, String telefono, String direccion) {
+    public Proveedor(String nombre, String telefono, String direccion, boolean activo) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
+        this.activo = activo;
     }
 
-    public Proveedor(int idProveedor, String nombre, String telefono, String direccion) {
+    public Proveedor(int idProveedor, String nombre, String telefono, String direccion, boolean activo) {
         this.idProveedor = idProveedor;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
+        this.activo = activo;
     }
 
     public int getIdProveedor() {
@@ -51,6 +56,14 @@ public class Proveedor {
         this.direccion = direccion;
     }
 
+    public boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
     @Override
     public String toString() {
         return "Proveedor{" +
@@ -58,6 +71,7 @@ public class Proveedor {
                 ", nombre='" + nombre + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", direccion='" + direccion + '\'' +
+                ", activo='" + activo + '\'' +
                 '}';
     }
 }

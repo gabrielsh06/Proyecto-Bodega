@@ -12,10 +12,11 @@ public class Producto {
     private int stockMinimo;
     private Date fechaVencimiento;
     private String categoria;
-    private int idProveedor;
+    private boolean activo;
+    private Integer idProveedor;
 
     public Producto(String nombre, String codigoBarra, double precioCompra, double precioVenta, int stock,
-                    int stockMinimo, Date fechaVencimiento, String categoria, int idProveedor) {
+                    int stockMinimo, Date fechaVencimiento, String categoria, Integer idProveedor, boolean activo) {
         this.nombre = nombre;
         this.codigoBarra = codigoBarra;
         this.precioCompra = precioCompra;
@@ -24,11 +25,12 @@ public class Producto {
         this.stockMinimo = stockMinimo;
         this.fechaVencimiento = fechaVencimiento;
         this.categoria = categoria;
+        this.activo = activo;
         this.idProveedor = idProveedor;
     }
 
     public Producto(int idProducto, String nombre, String codigoBarra, double precioCompra, double precioVenta,
-                    int stock, int stockMinimo, Date fechaVencimiento, String categoria, int idProveedor) {
+                    int stock, int stockMinimo, Date fechaVencimiento, String categoria, Integer idProveedor, boolean activo) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.codigoBarra = codigoBarra;
@@ -38,6 +40,7 @@ public class Producto {
         this.stockMinimo = stockMinimo;
         this.fechaVencimiento = fechaVencimiento;
         this.categoria = categoria;
+        this.activo = activo;
         this.idProveedor = idProveedor;
     }
 
@@ -113,12 +116,20 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public int getIdProveedor() {
+    public Integer getIdProveedor() {
         return idProveedor;
     }
 
-    public void setIdProveedor(int idProveedor) {
+    public void setIdProveedor(Integer idProveedor) {
         this.idProveedor = idProveedor;
+    }
+
+    public boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
     @Override
@@ -133,6 +144,7 @@ public class Producto {
                 ", stockMínimo=" + stockMinimo +
                 ", fechaVencimiento=" + fechaVencimiento +
                 ", categoria='" + categoria + '\'' +
+                ", activo='" + activo + '\'' +
                 ", idProveedor=" + idProveedor +
                 '}';
     }

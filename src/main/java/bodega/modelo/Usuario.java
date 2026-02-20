@@ -6,20 +6,23 @@ public class Usuario {
     private String usuario;
     private String contraseña;
     private String rol;
+    private boolean activo;
 
-    public Usuario(String nombre, String usuario, String contraseña, String rol) {
+    public Usuario(String nombre, String usuario, String contraseña, String rol, boolean activo) {
         this.nombre = nombre;
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.rol = rol;
+        this.activo = activo;
     }
 
-    public Usuario(int idUsuario, String nombre, String usuario, String contraseña, String rol) {
+    public Usuario(int idUsuario, String nombre, String usuario, String contraseña, String rol, boolean activo) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.rol = rol;
+        this.activo = activo;
     }
 
     public int getIdUsuario() {
@@ -62,6 +65,14 @@ public class Usuario {
         this.rol = rol;
     }
 
+    public boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -70,6 +81,7 @@ public class Usuario {
                 ", usuario='" + usuario + '\'' +
                 ", contraseña='" + contraseña + '\'' +
                 ", rol='" + rol + '\'' +
+                ", activo='" + activo + '\'' +
                 '}';
     }
 }
